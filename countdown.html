@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Countdown timer</title>
+		<link rel="stylesheet" type="text/css" href="countdown.css">
+		
+	</head>
+
+	<body>
+
+		<br>
+		<div class="clock"></div>
+		<br>
+		<div class="clock1"></div>
+
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script type="text/javascript" src="countdown.js"></script>
+		<script type="text/javascript">
+			//java script code set full year method
+			var clock;
+			$(document).ready(function(){
+				var currentDate = new Date();
+				var futureDate = new Date(currentDate.getFullYear() + 1, 0, 1);
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+
+				});
+			});
+
+
+			//java script code set time limit
+			var clock1; 
+			$(document).ready(function() {
+			    // Grab the current date 
+			    var currentDate = new Date(); 
+			    // Set some date in the future. ***change to desired date***
+			    //var futureDate = new Date(2014, 11, 23, 6, 0, 0); 
+			    var futureDate = new Date(2020, 7, 15, 18, 0, 0); //fixed as per comments
+			    // Calculate the difference in seconds between the future and current date 
+			    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000; 
+			    // Instantiate a coutdown FlipClock 
+			    clock1 = $('.clock1').FlipClock(diff, { clockFace: 'DailyCounter', countdown: true }); 
+			});
+
+
+		</script>
+
+
+	</body>
+
+</html>
